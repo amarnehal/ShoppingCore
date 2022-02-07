@@ -1,0 +1,36 @@
+﻿ @model ShoppingCore.Models.Category
+
+@{
+    ViewData["Title"] = "New";
+}
+<section class="pt-4 mt-4">
+    <form method="post">
+        <div class="border p-3 mt-4">
+            <div class=" row pb-2">
+                <h2 class="text-primary">Create Category</h2>
+                <hr />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DisplayOrder"></label>
+                <input asp-for="DisplayOrder" class="form-control" />
+                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+            </div>
+            <button class="btn btn-primary" type="submit" style="width:150px">Submit</button>
+            <a asp-controller="Category" asp-action="Index" class="btn btn-secondary">Back To List</a>
+        </div>
+    </form>
+    </section>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

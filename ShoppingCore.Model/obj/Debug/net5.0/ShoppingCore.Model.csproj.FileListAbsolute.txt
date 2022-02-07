@@ -1,0 +1,12 @@
+D:\ShoppingCore\ShoppingCore.Model\bin\Debug\net5.0\ShoppingCore.Model.deps.json
+D:\ShoppingCore\ShoppingCore.Model\bin\Debug\net5.0\ShoppingCore.Model.dll
+D:\ShoppingCore\ShoppingCore.Model\bin\Debug\net5.0\ref\ShoppingCore.Model.dll
+D:\ShoppingCore\ShoppingCore.Model\bin\Debug\net5.0\ShoppingCore.Model.pdb
+D:\ShoppingCore\ShoppingCore.Model\obj\Debug\net5.0\ShoppingCore.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\ShoppingCore\ShoppingCore.Model\obj\Debug\net5.0\ShoppingCore.Model.AssemblyInfoInputs.cache
+D:\ShoppingCore\ShoppingCore.Model\obj\Debug\net5.0\ShoppingCore.Model.AssemblyInfo.cs
+D:\ShoppingCore\ShoppingCore.Model\obj\Debug\net5.0\ShoppingCore.Model.csproj.CoreCompileInputs.cache
+D:\ShoppingCore\ShoppingCore.Model\obj\Debug\net5.0\ShoppingCore.Model.dll
+D:\ShoppingCore\ShoppingCore.Model\obj\Debug\net5.0\ref\ShoppingCore.Model.dll
+D:\ShoppingCore\ShoppingCore.Model\obj\Debug\net5.0\ShoppingCore.Model.pdb
+D:\ShoppingCore\ShoppingCore.Model\obj\Debug\net5.0\ShoppingCore.Model.csproj.AssemblyReference.cache

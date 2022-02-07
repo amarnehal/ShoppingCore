@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ShoppingCore.Model.ProductType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@if(TempData["Success"] != null)
+            {
+                <h2 class="alert-success">@TempData["Success"]</h2>
+            }
+<section class="pt-4 mt-4">
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-6 text-end">
+                <h2 class="text-primary">ProductType List</h2>
+            </div>
+            <div class="col-6">
+                <a asp-controller="ProductType" asp-action="New" class="btn btn-primary">Create New</a>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ProductType Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td>@obj.Name</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

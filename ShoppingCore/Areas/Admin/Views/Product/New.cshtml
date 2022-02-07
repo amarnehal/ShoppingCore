@@ -1,0 +1,54 @@
+﻿@model ShoppingCore.Model.ViewModels.ProductVM
+
+@{
+    ViewData["Title"] = "New";
+}
+<section class="pt-4 mt-4" >
+    <form method="post" enctype="multipart/form-data">
+        <div class="border p-3 mt4 row">
+            <div class="row pb-2">
+                <h2 class="text-primary">Create New Product</h2>
+                <hr />
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.product.Name"></label>
+                <input asp-for="@Model.product.Name" class="form-control" />
+                <span asp-validation-for="@Model.product.Name" class="text-danger"></span>
+            </div>
+            <div class="mb3 col-6">
+                <label asp-for="@Model.product.Description"></label>
+                <input asp-for="@Model.product.Description" class="form-control" />
+                <span asp-validation-for="@Model.product.Description" class="text-danger"></span>
+            </div>
+            <div class="mb3 col-6">
+                <label asp-for="@Model.product.Price"></label>
+                <input asp-for="@Model.product.Price" class="form-control" />
+                <span asp-validation-for="@Model.product.Price"></span>
+            </div>
+            <div class="mb4 col6">
+                <label asp-for="@Model.product.ImageUrl"></label>
+                <input type="file" name="file" class="form-control" />
+                <span asp-validation-for="@Model.product.ImageUrl"></span>
+            </div>
+            <div class="mb4 col-6">
+                <label asp-for="@Model.product.CategoryId"></label>
+                <select asp-for="@Model.product.CategoryId" asp-items="@Model.CategoryList" class="form-select">
+                    <option disabled selected>---Select Category---</option>
+                </select>
+                <span asp-validation-for="@Model.product.CategoryId" class="text-danger"></span>
+            </div>
+            <div class="mb-4 col-6">
+                <label asp-for="@Model.product.ProductTypeId"></label>
+                <select asp-for="@Model.product.ProductTypeId" asp-items="@Model.ProductTypeList" class="form-select">
+                    <option disabled selected>----Select ProductType----</option>
+                </select>
+                <span asp-validation-for="@Model.product.ProductType" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-secondary">Back To List</a>
+        </div>
+    </form>
+</section>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ShoppingCore.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if(TempData["Success"] != null)
+            {
+                <h2 class="alert-success">@TempData["Success"]</h2>
+            }
+<section class="pt-4 mt-4">
+    <div class="container p-3">
+        <div class="row pt-4">
+            <div class="col-6">
+                <h2 class="text-primary">Category List</h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-controller="Category" asp-action="New" class="btn btn-primary">Create New</a>
+            </div>
+        </div>
+
+
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Category Name</th>
+                    <th>category Description</th>
+                    <th>Display Order</th>
+                    <th>Date Created</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td width="25%">@obj.Name</td>
+                        <td width="25%">@obj.Description</td>
+                        <td width="25%">@obj.DisplayOrder</td>
+                        <td width="25%">@obj.DateCreated</td>
+                        <td>
+                            <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id"><i class="bi bi-pencil-square btn btn-secondary"></i>Edit</a>
+                        </td>
+                        <td>
+                            <a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.Id"> <i class="bi bi-eraser-fill btn btn-danger"></i>Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    </section>

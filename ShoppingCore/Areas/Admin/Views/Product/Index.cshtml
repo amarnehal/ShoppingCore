@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ShoppingCore.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@if (TempData["Success"] != null)
+{
+    <h2 class="alert-success">@TempData["Success"]</h2>
+}
+
+<div class="container">
+    <div class="row pt-4 mt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Products List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Product" asp-action="New" class="btn btn-primary">Create New</a>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Date Created</th>
+            <th>Product Price</th>
+            <th>Product Category</th>
+            <th>Prtoduct Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.Name</td>
+                <td>@obj.Description</td>
+                <td>@obj.DateCreated</td>
+                <td>@obj.Price</td>
+                <td>@obj.Category.Name</td>
+                <td>@obj.ProductType.Name</td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Product" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+

@@ -1,0 +1,25 @@
+Add a Shopping Cart Model 
+ public class ShoppingCart
+    {
+        public int Id { get; set; }
+        [ForeignKey("ProductId")]
+        public int ProductId { get; set; }
+        [ValidateNever]
+        public Product Product { get; set; }
+        [Range(1,100, ErrorMessage ="Please Select a value between 1 to 100")]
+        public int Count { get; set; }
+        [ForeignKey("ApplicationUserId")]
+        public string ApplicationUserId { get; set; }
+        [ValidateNever]
+        public ApplicationUser ApplicationUser { get; set; }
+    }
+
+Interface and repository 
+Create a  public interface IApplicationUser:BaseRepository<IApplicationUser>
+    {
+    }
+public interface IShoppingCart:BaseRepository<ShoppingCart>
+    {
+    }
+
+Implementation
